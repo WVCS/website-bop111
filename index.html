@@ -1,36 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="link to image">
+  <title>Julian's Projects</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+
+  <div class="navbar">
+    <button onclick="showHome()">Home</button>
+    <button onclick="showProject(1)">HR Diagram</button>
+    <button onclick="showProject(2)">Dummy Quiz</button>
+  </div>
+
+  <div class="content" id="main-content">
+    <h1>Julian's Projects</h1>
+  </div>
+
+  <script>
+    function showHome() {
+      document.getElementById("main-content").innerHTML = `
         <h1>Julian's Projects</h1>
-        <p>A showcase of my work in development, design, and more.</p>
-    </header>
+        <img src="https://ih1.redbubble.net/image.2408071135.4502/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" 
+         alt="Julian's Project Image">
+  `;
+}
 
-    <main class="projects-container">
-        <section class="project-card">
-            <h2>Project One</h2>
-            <p>Description of your first project. What it does, tools used, etc.</p>
-            <a href="#" target="_blank">View Project</a>
-        </section>
 
-        <section class="project-card">
-            <h2>Project Two</h2>
-            <p>Description of your second project. Add more info if needed.</p>
-            <a href="#" target="_blank">View Project</a>
-        </section>
+    function showProject(projectNumber) {
+      let iframeHTML = "";
+      if (projectNumber === 1) {
+        iframeHTML = '<iframe width="392" height="620" style="border: 0px;" src="https://studio.code.org/projects/applab/9qDSzJeVYRurgLjpfoqIIgXJxiiXJmHjMONDmuNOd34/embed"></iframe>';
+      } else if (projectNumber === 2) {
+        iframeHTML = '<iframe width="392" height="620" style="border: 0px;" src="https://studio.code.org/projects/applab/djqvVGdu4ihqgDK2wxjdz7SvDiKzviztQeGhHozusaQ/embed"></iframe>';
+      }
+      document.getElementById("main-content").innerHTML = iframeHTML;
+    }
+  </script>
 
-        <!-- Add more projects as needed -->
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Julian Yang. All rights reserved.</p>
-    </footer>
 </body>
 </html>
